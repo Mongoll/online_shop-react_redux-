@@ -1,6 +1,7 @@
 {
   "name": "frontend-advanced",
   "version": "0.1.0",
+  "homepage": "https://Mongoll.github.io/online_shop-react_redux-",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -33,7 +34,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
