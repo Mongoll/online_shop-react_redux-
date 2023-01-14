@@ -1,0 +1,15 @@
+img {
+  max-height: 560px;
+  width: 100%;
+}
+
+.sec {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  color: #fff;
+}
+
+.banerRoot {
+  position: relative;
+}
