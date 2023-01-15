@@ -23,7 +23,7 @@ function Copyright(props: any) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="/">
+      <Link color="inherit" href="/online_shop-react_redux-/">
         Your Website
       </Link>{" "}
       {new Date().getFullYear()}
@@ -51,7 +51,7 @@ const Login = () => {
       const token = response.data;
       localStorage.setItem("token", token.access_token);
       dispatch(fetchAuth(token.access_token) as any);
-      navigate("/");
+      navigate("/online_shop-react_redux-/");
     } catch (event) {
       console.log(event);
     }

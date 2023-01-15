@@ -12,13 +12,25 @@ import Login from "./pages/Login/Login";
 const RoutesMain = () => (
   <Routes>
     {/* render all routes here */}
-    <Route path="/" element={<Home />} />
-    <Route path="/all-products" element={<ProductsList />} />
-    <Route path="/all-products/:id" element={<Product />} />
-    <Route path="/cart" element={<Cart />} />
-    <Route path="/categories" element={<Categories />} />
-    <Route path="/categories/:id" element={<CategoryProducts />} />
-    <Route path="/login" element={<Login />} />
+    <Route path="/online_shop-react_redux-/" element={<Home />} />
+    <Route
+      path="/online_shop-react_redux-/all-products"
+      element={<ProductsList />}
+    />
+    <Route
+      path="/online_shop-react_redux-/all-products/:id"
+      element={<Product />}
+    />
+    <Route path="/online_shop-react_redux-/cart" element={<Cart />} />
+    <Route
+      path="/online_shop-react_redux-/categories"
+      element={<Categories />}
+    />
+    <Route
+      path="/online_shop-react_redux-/categories/:id"
+      element={<CategoryProducts />}
+    />
+    <Route path="/online_shop-react_redux-/login" element={<Login />} />
   </Routes>
 );
 

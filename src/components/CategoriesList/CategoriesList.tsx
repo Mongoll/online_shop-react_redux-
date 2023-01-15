@@ -30,7 +30,9 @@ const CategoriesList = () => {
           categories.map((category) => (
             <Grid item xs={3}>
               <Card sx={{ maxWidth: 345 }}>
-                <Link to={`/categories/${category.id}`}>
+                <Link
+                  to={`/online_shop-react_redux-/categories/${category.id}`}
+                >
                   <CardActionArea>
                     {category.image && (
                       <CardMedia

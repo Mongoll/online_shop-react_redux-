@@ -50,7 +50,7 @@ function Item(props: any) {
       <div className="sec">
         <Typography variant="h3">{props.item.name}</Typography>
         <Typography variant="subtitle1">{props.item.description}</Typography>
-        <Link to={`/categories/${props.item.link}`}>
+        <Link to={`/online_shop-react_redux-/categories/${props.item.link}`}>
           <Button
             sx={{
               ":hover": {

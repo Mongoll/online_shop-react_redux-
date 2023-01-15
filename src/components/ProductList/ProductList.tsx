@@ -9,6 +9,7 @@ import _ from "lodash";
 import { addProductToCart } from "../../redux/actions";
 import { AppState } from "../../types";
 import ProductCard from "../ProductCard/ProductCard";
+import { Container } from "@mui/system";
 
 // Product list with pagination and sorting
 const ProductList = (props: any) => {
@@ -66,38 +67,42 @@ const ProductList = (props: any) => {
   const dispatch = useDispatch();
   /* const user = useSelector((state: AppState) => state.userReducer.currentUser); */
   return (
-    <Box sx={{ width: "100%" }}>
-      <div className="country-list__sort">
-        <p>Sort by</p>
-        <Select
-          labelId="sort-country-select-label"
-          id="sort-country-select"
-          onChange={handleSort}
-          defaultValue="price"
-        >
-          <MenuItem value="sort">Sort By</MenuItem>
-          <MenuItem value="price">Price</MenuItem>
-          <MenuItem value="category.name">Category</MenuItem>
-        </Select>
-      </div>
-      {isLoading && <h2>Loading...</h2>}
+    <Container fixed>
+      <Box sx={{ width: "100%" }}>
+        {!props.slice && (
+          <div className="country-list__sort">
+            <p>Sort by</p>
+            <Select
+              labelId="sort-country-select-label"
+              id="sort-country-select"
+              onChange={handleSort}
+              defaultValue="price"
+            >
+              <MenuItem value="sort">Sort By</MenuItem>
+              <MenuItem value="price">Price</MenuItem>
+              <MenuItem value="category.name">Category</MenuItem>
+            </Select>
+          </div>
+        )}
+        {isLoading && <h2>Loading...</h2>}
 
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        {!isLoading &&
-          sortedProducts.slice(props.slice).map((product) => (
-            <Grid item xs={3}>
-              <ProductCard
-                key={product.id}
-                {...product}
-                onClick={() =>
-                  dispatch(addProductToCart(product, 1, user?.id as number))
-                }
-                disabled={false}
-              />
-            </Grid>
-          ))}
-      </Grid>
-    </Box>
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          {!isLoading &&
+            sortedProducts.slice(props.slice).map((product) => (
+              <Grid item xs={3}>
+                <ProductCard
+                  key={product.id}
+                  {...product}
+                  onClick={() =>
+                    dispatch(addProductToCart(product, 1, user?.id as number))
+                  }
+                  disabled={false}
+                />
+              </Grid>
+            ))}
+        </Grid>
+      </Box>
+    </Container>
   );
 };
 

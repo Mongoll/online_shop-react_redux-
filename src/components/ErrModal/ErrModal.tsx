@@ -57,7 +57,7 @@ export default function ErrModal() {
                 <ListItemText primary="- access to the dashboard (as admin)" />
               </ListItem>
             </List>
-            <Link to="/login">
+            <Link to="/online_shop-react_redux-/login">
               <Button variant="contained" color="success">
                 Login
               </Button>

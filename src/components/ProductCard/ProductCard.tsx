@@ -27,7 +27,7 @@ const ProductCard = ({
   const user = useSelector((state: AppState) => state.userReducer.currentUser);
   return (
     <Card sx={{ maxWidth: 345 }} key={id}>
-      <Link to={`/all-products/${id}`}>
+      <Link to={`/online_shop-react_redux-/all-products/${id}`}>
         <CardActionArea>
           {images && (
             <CardMedia

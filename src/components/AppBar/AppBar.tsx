@@ -43,7 +43,7 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Link to={"/"}>
+          <Link to={"/online_shop-react_redux-/"}>
             <IconButton
               size="large"
               edge="start"
@@ -56,7 +56,7 @@ export default function PrimarySearchAppBar() {
           </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Link to={page}>
+              <Link to={`/online_shop-react_redux-/${page}`}>
                 <Button
                   key={page}
                   sx={{ my: 2, color: "white", display: "block" }}
@@ -70,7 +70,7 @@ export default function PrimarySearchAppBar() {
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Link to={"/cart"}>
+            <Link to={"/online_shop-react_redux-/cart"}>
               <IconButton
                 size="large"
                 aria-label="show 4 new mails"
@@ -125,7 +125,7 @@ export default function PrimarySearchAppBar() {
             )}
 
             {!user && (
-              <Link to={"/login"}>
+              <Link to={"/online_shop-react_redux-//login"}>
                 <Button color="inherit">Login</Button>
               </Link>
             )}

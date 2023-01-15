@@ -66,7 +66,9 @@ const Cart = () => {
                         justifyContent="space-between"
                       >
                         <Grid xs={4}>
-                          <Link to={`/all-products/${product.prod_id}`}>
+                          <Link
+                            to={`/online_shop-react_redux-/all-products/${product.prod_id}`}
+                          >
                             <Typography>{product.title}</Typography>
                           </Link>
                         </Grid>
