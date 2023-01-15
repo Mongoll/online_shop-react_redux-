@@ -70,7 +70,7 @@ const ProductList = (props: any) => {
   /* const user = useSelector((state: AppState) => state.userReducer.currentUser); */
   return (
     <Container fixed>
-      <Box sx={{ width: "100%" }}>
+      <Box sx={{ width: "100%", paddingTop: 2 }}>
         {!props.slice && (
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="demo-select-small">Sort by</InputLabel>
