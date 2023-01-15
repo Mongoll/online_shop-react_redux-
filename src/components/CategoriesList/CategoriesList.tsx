@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import CardActions from "@mui/material/CardActions";
 
 import { AppState } from "../../types";
+import { Container } from "@mui/system";
 
 const CategoriesList = () => {
   //get all products from redux state
@@ -22,39 +23,41 @@ const CategoriesList = () => {
   );
 
   return (
-    <Box sx={{ width: "100%" }}>
-      {isLoading && <h2>Loading...</h2>}
+    <Container fixed>
+      <Box sx={{ width: "100%", paddingTop: 5 }}>
+        {isLoading && <h2>Loading...</h2>}
 
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        {!isLoading &&
-          categories.map((category) => (
-            <Grid item xs={3}>
-              <Card sx={{ maxWidth: 345 }}>
-                <Link
-                  to={`/online_shop-react_redux-/categories/${category.id}`}
-                >
-                  <CardActionArea>
-                    {category.image && (
-                      <CardMedia
-                        component="img"
-                        height="140"
-                        image={category.image}
-                        alt={category.name}
-                      />
-                    )}
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        {category.name}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Link>
-                <CardActions></CardActions>
-              </Card>
-            </Grid>
-          ))}
-      </Grid>
-    </Box>
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          {!isLoading &&
+            categories.map((category) => (
+              <Grid item xs={3}>
+                <Card sx={{ maxWidth: 345 }}>
+                  <Link
+                    to={`/online_shop-react_redux-/categories/${category.id}`}
+                  >
+                    <CardActionArea>
+                      {category.image && (
+                        <CardMedia
+                          component="img"
+                          height="140"
+                          image={category.image}
+                          alt={category.name}
+                        />
+                      )}
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          {category.name}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Link>
+                  <CardActions></CardActions>
+                </Card>
+              </Grid>
+            ))}
+        </Grid>
+      </Box>
+    </Container>
   );
 };
 

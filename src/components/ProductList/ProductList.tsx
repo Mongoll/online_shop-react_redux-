@@ -10,6 +10,8 @@ import { addProductToCart } from "../../redux/actions";
 import { AppState } from "../../types";
 import ProductCard from "../ProductCard/ProductCard";
 import { Container } from "@mui/system";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
 
 // Product list with pagination and sorting
 const ProductList = (props: any) => {
@@ -70,19 +72,21 @@ const ProductList = (props: any) => {
     <Container fixed>
       <Box sx={{ width: "100%" }}>
         {!props.slice && (
-          <div className="country-list__sort">
-            <p>Sort by</p>
+          <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+            <InputLabel id="demo-select-small">Sort by</InputLabel>
             <Select
               labelId="sort-country-select-label"
               id="sort-country-select"
               onChange={handleSort}
-              defaultValue="price"
+              label="Sort by"
             >
-              <MenuItem value="sort">Sort By</MenuItem>
+              <MenuItem value="id">
+                <em>None</em>
+              </MenuItem>
               <MenuItem value="price">Price</MenuItem>
               <MenuItem value="category.name">Category</MenuItem>
             </Select>
-          </div>
+          </FormControl>
         )}
         {isLoading && <h2>Loading...</h2>}
 
